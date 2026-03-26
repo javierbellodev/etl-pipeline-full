@@ -34,8 +34,7 @@ El dataset contiene crímenes reportados en Chicago desde 2001 hasta el presente
 
 ### 1. Crear entorno virtual
 
-```bash
-cd "M11. W02 - Proyecto Final"
+```bash 
 python -m venv venv
 source venv/bin/activate  # macOS/Linux
 ```
