@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: fact_chicago_crimes
+    description: "Tabla de hechos principal con crímenes de Chicago procesados"
+    columns:
+      - name: crime_id
+        tests:
+          - unique
+          - not_null
+      - name: crime_date
+        tests:
+          - not_null
+      - name: primary_type
+        tests:
+          - not_null
+      - name: crime_hour
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 23
+
+  - name: dim_crime_type
+    description: "Dimensión de tipos de crimen"
+    columns:
+      - name: primary_type
+        tests:
+          - not_null
+
+  - name: dim_location
+    description: "Dimensión de ubicaciones"
+    columns:
+      - name: location_description
+        tests:
+          - not_null
+
+  - name: dim_date
+    description: "Dimensión de calendario"
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null

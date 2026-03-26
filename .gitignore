@@ -1,0 +1,30 @@
+.DS_Store
+Thumbs.db
+
+# dbt
+target/
+compiled/
+run/
+.dbt/
+dbt_packages/
+
+# IDEs / editors
+.vscode/
+.idea/ 
+
+# Docker
+docker-compose.override.yml
+
+# Logs
+logs/
+*.log
+
+# Misc
+*.sqlite3
+*.db
+/.DS_Store
+
+/venv/
+venv/
+
+*.duckdb

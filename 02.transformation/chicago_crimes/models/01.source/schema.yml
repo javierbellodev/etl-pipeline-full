@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: raw_crimes
+    description: "Datos crudos de Chicago Crimes cargados por el pipeline DLT"
+    schema: raw_crimes
+    tables:
+      - name: crimes
+        description: "Tabla de crímenes reportados en Chicago desde la API Open Data"
+        columns:
+          - name: id
+            description: "Identificador único del crimen"
+          - name: case_number
+            description: "Número de caso"
+          - name: date
+            description: "Fecha y hora del crimen"
+          - name: primary_type
+            description: "Tipo principal de crimen"
+          - name: description
+            description: "Descripción detallada"
+          - name: location_description
+            description: "Descripción de la ubicación"
+          - name: arrest
+            description: "Si hubo arresto"
+          - name: domestic
+            description: "Si fue un incidente doméstico"
+          - name: latitude
+            description: "Latitud"
+          - name: longitude
+            description: "Longitud"
+
+models:
+  - name: src_chicago_crimes
+    description: "Vista fuente sobre los datos crudos de DLT"
+    config:
+      materialized: view

@@ -1,0 +1,15 @@
+chicago_crimes:
+  outputs:
+    blue:
+      type: duckdb
+      path: "{{ env_var('CHICAGO_CRIMES_DB_PATH', 'chicago_crimes.duckdb') }}"
+      threads: 4
+      schema: blue
+
+    green:
+      type: duckdb
+      path: "{{ env_var('CHICAGO_CRIMES_DB_PATH', 'chicago_crimes.duckdb') }}"
+      threads: 4
+      schema: green
+
+  target: blue
